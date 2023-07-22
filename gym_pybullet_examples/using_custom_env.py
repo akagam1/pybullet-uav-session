@@ -1,16 +1,6 @@
-import argparse
-import time
 from pynput import keyboard
 
-import gym
 import numpy as np
-import ray
-from gym_pybullet_drones.utils.Logger import Logger
-from gym_pybullet_drones.utils.utils import str2bool, sync
-from ray.tune import register_env
-from stable_baselines3 import A2C
-from stable_baselines3.a2c import MlpPolicy
-from stable_baselines3.common.env_checker import check_env
 from creating_custom_env import TwoDronesAviary
 
 
@@ -75,7 +65,6 @@ def on_release(key):
 
 
 def run():
-    # env = gym.make("two-drone-aviary-v0")
     env = TwoDronesAviary(gui=True)
     print("[INFO] Action space:", env.action_space)
     print("[INFO] Observation space:", env.observation_space)
